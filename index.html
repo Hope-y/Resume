@@ -1,0 +1,366 @@
+
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+ hr.class-2 { 
+            border-top: 3px double #8c8b8b; 
+        } 
+
+html,body,h2, {font-family: "Roboto", sans-serif}
+body{ 
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+}
+
+* {
+  box-sizing: border-box;
+}
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.sidebar {
+ height:50%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+ button 0;
+  left: 0;
+
+  "background-color:teal;"
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  height:50%;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  "background-color:teal;"
+  color: #818181;
+  display: block;
+float:left;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/*
+Animation Sequence:
+(tail continuously flapping)
+- whale moves down low
+- eye looks down at flipper
+- shakes flipper
+- moves up
+- eye looks upward
+- sprays
+- moves down a bit
+- eye looks forward
+- moves up to starting point
+*/
+
+
+.whale {
+	animation: whale-up-down 12s infinite cubic-bezier(.6,0,.4,1);
+}
+
+
+/* Tail & Left Body */
+.tail {
+	/* transform-origin: center; */
+	transform-origin: 14.835px 42.795px;
+	transform: skew(0, -15deg) translate(-.4px, 2.5px) rotate(36deg);
+	animation: tail;
+}
+.body-top-left {
+	/* transform-origin: top right; */
+	transform-origin: 58.5px 24.5px;
+	transform: rotate(-3deg);
+	animation: body-top-left;
+}
+.body-lower-left {
+	/* transform-origin: bottom right; */
+	transform-origin: 46.74px 56.36px;
+	transform: rotate(-3deg);
+	animation: body-lower-left;
+}
+.tail,
+.body-top-left,
+.body-lower-left {
+	animation-duration: 4s;
+	animation-delay: -1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(.6,0,.4,1);
+}
+
+
+
+/* Eye */
+.pupil {
+	transform-origin: 62.5px 42.5px;
+/* 	transform-origin: left center; */
+	transform: rotate(-5deg);
+	animation: look-around 12s infinite cubic-bezier(.6,0,.4,1);
+}
+
+
+/* Flipper */
+.flipper {
+	/* transform-origin: 80% 0%; */
+	transform-origin: 48.544px 48.32px;
+	transform: rotate(-10deg) scaleY(.7);
+	stroke-width: 1.2;
+	animation: flipper 12s infinite ease-in-out;
+}
+
+
+/* Spray Streams */
+.sprays path {
+	animation-duration: 12s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+}
+.spray-1 {
+	/* path length: 19.5708 */
+	stroke-dasharray: 19.57;
+	/* round down the length slightly for the stroke-dasharray */
+	stroke-dashoffset: 58.7125;
+	/* dash	offset should be 3x the length */
+	animation: spray-1;
+}
+.spray-2 {
+	/* path length: 48.2011 */
+	stroke-dasharray: 48.2;
+	stroke-dashoffset: 144.6033;
+	animation: spray-2;
+}
+.spray-3 {
+	/* path length: 29.0627 */
+	stroke-dasharray: 29.06;
+	stroke-dashoffset: 87.1881;
+	animation: spray-3;
+}
+.spray-4 {
+	/* path length: 34.7940 */
+	stroke-dasharray: 34.79;
+	stroke-dashoffset: 104.382;
+	animation: spray-4;
+}
+.spray-5 {
+	/* path length: 37.0617 */
+	stroke-dasharray: 37.06;
+	stroke-dashoffset: 111.1851;
+	animation: spray-5;
+}
+.spray-6 {
+	/* path length: 22.1995 */
+	stroke-dasharray: 22.19;
+	stroke-dashoffset: 66.5985;
+	animation: spray-6;
+}
+.spray-7 {
+	/* path length: 14.5739 */
+	stroke-dasharray: 14.57;
+	stroke-dashoffset: 43.7218;
+	animation: spray-7;
+}
+
+</style>
+
+<body>
+
+
+<div class="sidebar" style="font-family: "Roboto", sans-serif">
+<footer class="w3-teal">
+<img src="https://i.ibb.co/ZmJPYDp/FB-IMG-1601815651741.jpg" alt="Avatar" style="width:160px; hight:100px;">
+ <Pre><h3>  Hope Yentis</h3></pre> 
+<br><br>
+
+<div class="w3-container" style="font-size:100%;">
+<pre>  <i class="fa fa-phone"> 0506968634</i></pre>
+<pre>  <i class="fa fa-birthday-cake"> BOD: 05/08/93</i></pre>
+<pre><a style="font-size:90%" href="mailto:hope.yentis@gmail.com"><i class="fa fa-envelope-o"> mail</i></a></pre>
+</footer>
+
+<footer class="w3-container w3-teal w3-margin-up">
+ <hr>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80" version="1.1">
+
+  <g class="whale-container" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+
+    <g class="whale">
+
+      <!-- 	 Tail	 -->
+      <path class="tail" d="M21.4 43.9C20.9 45.4 19.7 48.9 16.7 50.6 13.6 52.4 11.8 51.7 8.3 52.1 14.2 46.3 12.2 43.3 14.9 40.8 12.5 39.2 14.4 37.8 13 34.3 14.9 34.4 18.5 32.9 19.7 33.9 20.9 34.9 20.5 36.3 21.1 38.3" />
+
+      <!-- 	Main Body	 -->
+      <path class="body-lower-right" d="M78.5 46.1C75.5 46.1 75.2 47.3 73.5 48 75.5 47.4 78 47.6 78 47.6 75.5 54.1 66.5 57.5 57.5 57.5 53.1 57.5 50.3 57 45.4 56.1" />
+
+      <path class="body-lower-left" d="M46.7 56.4C37.7 54.8 28 51.7 20 47" />
+
+      <path class="body-top-right" d="M58.5 24.5C73.5 24.5 77.5 34.5 77.5 39.5 77.5 41.5 77.5 45.1 78.5 46.1" />
+
+      <path class="body-top-left" d="M21 42C34.5 42 41.5 24.5 58.5 24.5" />
+
+      <path class="smile" d="M69.5 47.5C70.6 49.2 73 48.1 74 47.9" />
+
+      <!-- 	Flipper	 -->
+      <path class="flipper" d="M52.5 48.6C51.4 51.7 49.2 55.5 46.6 58.6 44 61.6 39.6 63 34.4 61.1 31.1 60 33.1 55.1 37.6 52.2 40 50.7 44.4 49.9 43 48.3" />
+
+      <!-- 	 Eye	 -->
+      <circle class="eye" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" cx="62.5" cy="42.5" r="4" />
+
+      <circle class="pupil" fill="#FFFFFF" cx="64.25" cy="42.25" r="2.25" stroke="none" />
+
+      <!-- 	Blow Hole	 -->
+      <path class="blow-hole" d="M53 27.9C53.8 26.9 55.5 27.4 56 26.9" />
+
+    </g>
+
+    <!--  Spray	 -->
+    <g class="sprays" color:"#FFFFFF">
+      <path class="spray-1" d="M54 27C53 21 51 16.5 46.5 16.5 42.9 16.5 42.5 19.5 42.5 19.5" />
+
+      <path class="spray-2" d="M53.5 27.5L53.5 18C53.5 8.5 51.5 4 47 4 44 4 42.5 6.5 42.5 8.5 42.5 10 43.5 12.5 46 12.5 48 12.5 48.5 11 48.5 10 48.5 7.5 46 7.5 45.5 8.5" />
+
+      <path class="spray-3" d="M54.4 27.2C54 15.5 56.5 3 48.5 0.5" />
+
+      <path class="spray-4" d="M55.5 27C55.5 27 56 15 56.5 10 57 5 59.5 1.5 63.5 1.5 67.5 1.5 68.5 3.5 68.5 3.5" />
+
+      <path class="spray-5" d="M55.5 27C55.5 27 56.5 20 57.5 14.5 58.5 9 61 7.5 63.5 7.5 66 7.5 67 9 67 10.5 67 12 66 13.5 64.5 13.5 63 13.5 62.5 12.5 62.5 12 62.5 11 63 10.5 63.5 10.5" />
+
+      <path class="spray-6" d="M55.5 27C55.5 21.5 62.5 11 70.5 19" />
+
+      <path class="spray-7" d="M55.5 27C55.5 21.5 61.5 18.5 66 21" />
+
+    </g>
+
+  </g>
+
+</svg>
+
+<script>
+// Determining the length of a path:
+// var length = document.querySelector('.spray-7').getTotalLength();
+// console.log("spray 7: " + length);
+
+// ------------------------------
+
+// Event Listener for Zoom Button
+$(".zoom-button").click(zoom);
+
+// Function to zoom in or out
+function zoom() {
+  if ($("html").hasClass("zoomed")) {
+    $("html").removeClass("zoomed");
+  } else {
+    $("html").addClass("zoomed");
+  }
+}
+</script>
+
+<div class="zoom-button">Scale to </div>
+</footer>  
+</div>  
+</div>
+
+<div style="margin-left:170"><!-- next too the side bar' 10px to the left-->
+<h2> <center>EDUCATION</center></h2>
+<pre>2020-2020: QA & Automation Course (www.QAmasters.co.il)
+2018 -2020: <b>B.sc in Computer Science</b> at Holon Institute of Technology up to the second year
+2006-2011: Emek Hahula, High school: Full matriculation. Majors: English and Biology 
+2010: Tel Hai academic college  - Participated in a Chemistry excellence project
+</pre>
+<hr class="class-2" /> 
+
+<h2> <center>PROFESSIONAL HISTORY</center></h2>
+<pre>01/2020 - 06/2020 – QA tester at EyeClick
+Working  independently and in close cooperation with team members to understand system design and plan relevant tests
+Document defects and report errors to development teams
+Conduct tests in various manners including
+Manual, web, mobile (iOS and android), black box, sanity, regression, acceptance 
+Ensure ongoing product quality throughout the software development lifecycle, e2e, regression
+Ability to reproduce issues that arise during the development lifecycle
+Worked with various bug documentation tools (Asana and Jira and Kibana)
+Tested software under agile development </pre>
+<hr class="class-2" /> 
+
+<h2> <center>PERSONAL SKILLS AND COMPETENCE</center></h2>
+<pre>
+SQL
+Experience  with JIRA project management tool
+Experience with KIBANA Board management
+Experience with Jenkins 
+Knowledge  in STD. STP
+Knowledge in programming with C, PYTHON, HTML languages
+Able to work in both team and self-directed settings and environment 
+Working with team and performing QA tests on gaming company
+Preforming tests on multiple platforms application (Android,IOS,WEB)
+</pre>
+<hr class="class-2" /> 
+
+<h2> <center>ARMY SERVICE</center></h2>
+<p> 2012 – 2015: Investigator in the Ministry of Defence</p>
+</pre>
+<hr class="class-2" /> 
+
+<h2> <center>LANGUAGES</center></h2>
+
+<div class="row">
+  <div class="column">
+    <h2><p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p></h2>
+    <p><p>Hebrew</p>
+      <div class="w3-light-grey w3-round-xlarge" style="width:50%">
+       <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%">Native</div>
+       </div>  
+      <p>English</p>
+     <div class="w3-light-grey w3-round-xlarge"  style="width:50%">
+      <div class="w3-round-xlarge w3-teal" style="height:24px;width:90%">Fluent</div>
+     </div>
+     <p>German</p>
+         <div class="w3-light-grey w3-round-xlarge"  style="width:50%">
+        <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%">Beginner</div></p>
+        </p>
+      </div>
+  </div>
+  <div class="column">
+    <h2><p class="w3-large w3-text-theme"><b><i class="fa fa-cog fa-fw w3-margin-right w3-text-teal"></i>Computer Languages</b></p></h2>
+    <p>
+
+    <p><p>C</p>
+      <div class="w3-light-grey w3-round-xlarge"  style="width:50%">
+        <div class="w3-round-xlarge w3-teal" style="height:24px;width:45%">knowledgeable</div></p>
+       </div>  
+      <p>Python</p>
+     <div class="w3-light-grey w3-round-xlarge"  style="width:50%">
+        <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%">Beginner</div></p>
+     </div>
+     <p>Html</p>
+         <div class="w3-light-grey w3-round-xlarge"  style="width:50%">
+        <div class="w3-round-xlarge w3-teal" style="height:24px;width:80%">70%-80%</div></p>
+    
+
+
+</p>
+  </div>
+</div>
+
+</body>
+</html> 
+
+
